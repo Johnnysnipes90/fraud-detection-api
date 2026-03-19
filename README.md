@@ -18,19 +18,22 @@ This project covers the full ML lifecycle:
 
 Base URL:
 
-```https://fraud-detection-api-dohb.onrender.com
+```
+https://fraud-detection-api-dohb.onrender.com
 
 ```
 
 ### Interactive Docs
 
-```https://fraud-detection-api-dohb.onrender.com/docs
+```
+https://fraud-detection-api-dohb.onrender.com/docs
 
 ```
 
 ### Health Check
 
-```https://fraud-detection-api-dohb.onrender.com/health
+```
+https://fraud-detection-api-dohb.onrender.com/health
 
 ```
 
@@ -181,7 +184,8 @@ Threshold: **0.85**
 
 ## 🧪 Testing
 
-```pytest
+```
+pytest
 
 ```
 
@@ -189,7 +193,8 @@ Threshold: **0.85**
 
 ## 🐳 Docker
 
-```docker build -t fraud-detection-api .
+```
+docker build -t fraud-detection-api .
 docker run -p 8000:8000 fraud-detection-api
 ```
 
