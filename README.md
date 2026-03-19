@@ -1,4 +1,4 @@
-# 🚀 Fraud Detection System (End-to-End ML + API)
+# 🚀 Fraud Detection System (End-to-End ML + Live API)
 
 A production-style fraud detection system built using machine learning, designed to identify high-risk transactions with tunable precision-recall tradeoffs.
 
@@ -11,6 +11,28 @@ This project covers the full ML lifecycle:
 - Threshold optimization
 - Explainability (SHAP)
 - API deployment with FastAPI
+
+---
+
+## 🌐 Live API
+
+Base URL:
+
+```https://fraud-detection-api-dohb.onrender.com
+
+```
+
+### Interactive Docs
+
+```https://fraud-detection-api-dohb.onrender.com/docs
+
+```
+
+### Health Check
+
+```https://fraud-detection-api-dohb.onrender.com/health
+
+```
 
 ---
 
@@ -50,13 +72,13 @@ Models trained:
 
 - Logistic Regression (baseline)
 - Random Forest
-- XGBoost (final model)
+- **XGBoost (final model)**
 
 ### 4. Validation Strategy
 
 - Random split (baseline)
-- Time-based split (realistic)
-- Rolling time validation (robustness)
+- **Time-based split (realistic)**
+- **Rolling time validation (production-level robustness)**
 
 ### 5. Imbalance Handling
 
@@ -76,7 +98,7 @@ Models trained:
 
 ---
 
-### 🎯 Final Threshold Selection
+## 🎯 Final Decision Threshold
 
 Threshold: **0.85**
 
@@ -86,7 +108,7 @@ Threshold: **0.85**
 
 ✔ High-confidence fraud detection  
 ✔ Reduced false positives  
-✔ Business-ready operating point
+✔ Business-ready deployment
 
 ---
 
@@ -99,37 +121,13 @@ Threshold: **0.85**
 
 ---
 
-## 🔍 Explainability (SHAP)
-
-- Global feature importance
-- Individual transaction explanations
-- Fraud driver analysis
-
-This ensures:
-
-- transparency
-- auditability
-- trust in model decisions
-
----
-
-## ⚙️ API Deployment
-
-A FastAPI service exposes the model for real-time scoring.
-
-### Run locally
-
-```bash
-uvicorn src.api.main:app --reload
-```
+## ⚙️ API Usage
 
 ### Endpoint
 
-POST /predict
+**POST/predict**
 
-### Example Request
-
-```Json
+```
 {
   "TransactionDT": 12000000,
   "TransactionAmt": 350.0,
@@ -157,7 +155,7 @@ POST /predict
 
 ### Example Response
 
-```Json
+```
 {
   "fraud_probability": 0.667384,
   "fraud_prediction": 0,
@@ -168,18 +166,30 @@ POST /predict
 
 ---
 
+## 🔍 Explainability (SHAP)
+
+- Global feature importance
+- Individual transaction explanations
+- Fraud driver analysis
+  This ensures:
+
+- transparency
+- auditability
+- trust in model decisions
+
+---
+
 ## 🧪 Testing
 
-```bash
-pytest
+```pytest
+
 ```
 
 ---
 
 ## 🐳 Docker
 
-```bash
-docker build -t fraud-detection-api .
+```docker build -t fraud-detection-api .
 docker run -p 8000:8000 fraud-detection-api
 ```
 
@@ -187,7 +197,6 @@ docker run -p 8000:8000 fraud-detection-api
 
 ## 👤 Author
 
-John Olalemi
-Data Scientist | Product Analytics | Machine Learning
+John Olalemi Data Scientist | Product Analytics | Machine Learning
 
 🔗 GitHub: https://github.com/Johnnysnipes90

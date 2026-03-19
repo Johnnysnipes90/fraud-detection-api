@@ -1,8 +1,3 @@
----
-
-# ✅ FINAL `BUSINESS_CASE.md`
-
-```markdown
 # 💼 Fraud Detection System — Business Case
 
 ## 🎯 Objective
@@ -11,13 +6,15 @@ Build a fraud detection system that:
 
 - Detects fraudulent transactions accurately
 - Minimizes false positives
-- Operates realistically in production
+- Operates in a realistic production environment
 
 ---
 
 ## ⚠️ The Challenge
 
-Fraud detection involves a tradeoff:
+Fraud detection is a **highly imbalanced classification problem (~3.5% fraud)**.
+
+Key tradeoff:
 
 | Goal                     | Impact               |
 | ------------------------ | -------------------- |
@@ -28,27 +25,35 @@ Fraud detection involves a tradeoff:
 
 ## 🧠 Key Insight
 
-Fraud detection is not just about modeling.
+Fraud detection is not just a modeling problem.
 
-It is about **decision thresholds**.
+It is a **decision-making system driven by thresholds**.
 
 ---
 
 ## 📊 Model Capability
 
-The model outputs a **fraud probability** per transaction.
+The model outputs a **fraud probability score** for each transaction.
 
-This allows flexible business decisions.
+This enables flexible business strategies depending on risk tolerance.
 
 ---
 
-## ⚖️ Strategy Options
+## ⚖️ Decision Strategy
 
 ### Aggressive Detection (Threshold = 0.50)
 
 - Recall: ~74%
 - Precision: ~21%
-- Use: investigation queues
+
+✔ Suitable for:
+
+- fraud investigation queues
+- high-risk environments
+
+❌ Drawback:
+
+- high false positive rate
 
 ---
 
@@ -59,9 +64,11 @@ Threshold = **0.85**
 - Precision: **60%**
 - Recall: **42%**
 
-✔ High-confidence alerts  
-✔ Reduced customer friction  
-✔ Better operational efficiency
+✔ Benefits:
+
+- High-confidence fraud alerts
+- Reduced customer friction
+- Lower operational cost
 
 ---
 
@@ -69,48 +76,64 @@ Threshold = **0.85**
 
 At threshold = 0.85:
 
-- ~60% of alerts are true fraud
+- ~60% of flagged transactions are actual fraud
 - ~1,100 false positives (low)
-- ~1,600 fraud cases detected
+- ~1,600 fraud cases successfully detected
+
+This creates:
+
+✔ Reliable fraud alerts  
+✔ Reduced manual review workload  
+✔ Improved customer experience
 
 ---
 
 ## 🔄 Why Time-Based Validation Matters
 
-Ensures:
+Unlike standard random splits, this project uses:
 
-- realistic performance
-- no data leakage
-- robustness over time
+- chronological validation
+- rolling time validation
+
+This ensures:
+
+✔ realistic performance estimation  
+✔ no data leakage  
+✔ robustness over time
 
 ---
 
 ## 🔍 Explainability
 
-SHAP enables:
+Using SHAP, the model provides:
 
-- transparency
-- auditability
-- trust
+- feature-level explanations
+- transaction-level insights
+
+Enabling:
+
+✔ transparency  
+✔ auditability  
+✔ stakeholder trust
 
 ---
 
 ## 🏗️ Deployment
 
-FastAPI service enables:
+The system is deployed via FastAPI:
 
 - real-time fraud scoring
-- scalable architecture
 - consistent preprocessing
+- scalable API architecture
 
 ---
 
 ## 🚀 Conclusion
 
-This system is a **decision-ready fraud detection pipeline**, not just a model.
+This project is not just a model — it is a **production-ready fraud detection system**.
 
 It demonstrates:
 
-- strong ML engineering
-- business-aware modeling
-- production readiness
+- strong machine learning capability
+- business-aware decision modeling
+- end-to-end system deployment
