@@ -1,79 +1,65 @@
 # =========================
-
 # PYTHON
-
 # =========================
-
-**pycache**/
+__pycache__/
 *.py[cod]
 *$py.class
 
 # =========================
-
 # VIRTUAL ENV
-
 # =========================
-
 venv/
 .env
 .venv/
 
 # =========================
-
 # JUPYTER
-
 # =========================
-
 .ipynb_checkpoints/
 
 # =========================
-
 # SYSTEM FILES
-
 # =========================
-
 .DS_Store
 Thumbs.db
 
 # =========================
-
 # IDE / EDITOR
-
 # =========================
-
 .vscode/
 .idea/
 
 # =========================
-
 # LOGS
-
 # =========================
-
 *.log
 
 # =========================
-
 # TEST / CACHE
-
 # =========================
-
 .pytest_cache/
 .cache/
 
 # =========================
-
 # DOCKER
-
 # =========================
-
 *.tar
 
 # =========================
-
-# DATA (VERY IMPORTANT)
+# DATA (IMPORTANT)
+# =========================
+/data/
+/Data/
 
 # =========================
+# MODEL ARTIFACTS (CRITICAL)
+# =========================
+models/*.pkl
 
-data/
-Data/
+# =========================
+# OPTIONAL: KEEP SELECTED FILES
+# =========================
+!models/fraud_model.pkl
+!models/frequency_maps.pkl
+!models/high_card_cols.pkl
+!models/expected_columns.pkl
